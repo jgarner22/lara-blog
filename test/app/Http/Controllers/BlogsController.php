@@ -18,6 +18,10 @@ class BlogsController extends Controller
     {
         $this->middleware('auth');
     }
+    public function home()
+    {
+        return view('home');
+    }
     /**
      * Display a listing of the resource.
      *

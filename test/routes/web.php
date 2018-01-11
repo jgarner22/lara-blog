@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 //Pages without Login Restrictions
+Route::get('/home', 'BlogsController@home')->name('home');
 Route::get('/test', 'HomeController@test')->name('test');
 Route::get('/blogs','HomeController@index')->name('blogs.index');
 
