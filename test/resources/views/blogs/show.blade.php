@@ -1,15 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="col-sm-8 blog-main">
-    <h2 class="blog-post-title">{{$blog->title}}</h2>
-    <p class="blog-post-meta">{{$blog->created_at}} by {{$blog->author_id}}</p>
+  <!-- blog-main -->
+  <div class="col-sm-8 container">
+    <h2>{{$blog->title}}</h2>
+    <p>{{$blog->created_at}} by {{$blog->author_id}}</p>
     <p>{{$blog->body}}</p>
-  </div><!-- /.blog-main -->
-  <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+
+
+    <!-- Comments Section -->
+    <form method="post" action="route ('comments.store')">
+          {{csrf_field()}}
+
+      <input type="hidden" name="blog_id" value="{{$blog->id}}">
+
+        <div class="form-group">
+          <br> 
+          <textarea rows="3"
+                    cols="50"
+                    placeholder="Enter your comment here"
+                    name="body" 
+                    required></textarea>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary" value="Post Comment"/>
+        </div>
+    </form>
+  </div>
+
+
+  <!-- Sidebar -->
+  <div class="col-sm-3 col-sm-offset-1">
     <h4>Actions</h4>
     <ol class="list-unstyled">
-      <li><a href="/blogs">Return to Blogs Page</a></li>
       <li><a href="/blogs/{{$blog->id}}/edit">Edit</a></li>
       <li><!-- Beginning of Delete Link -->
         <a href="#" 
@@ -24,7 +48,7 @@
           <input type="hidden" name="_method" value="delete">
           {{csrf_field()}}
         </form>
-      </li> <!-- Delete Link End -->
+      </li> <!-- End of Delete -->
     </ol>
   </div>
     <!-- Bootstrap core JavaScript

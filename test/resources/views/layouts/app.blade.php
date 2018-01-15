@@ -17,6 +17,7 @@
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
+
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -37,6 +38,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                        <li><a href="{{ route('blogs.index') }}">Blogs</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -71,7 +73,7 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container-fluid">
 
             @include('parts.success')
             @include('parts.errors')

@@ -22,6 +22,7 @@ Route::get('/home', 'BlogsController@home')->name('home');
 Route::get('/test', 'HomeController@test')->name('test');
 Route::get('/blogs','HomeController@index')->name('blogs.index');
 
+//Pages Requiring Authentication
 
 Route::get('/blogs/create', 'BlogsController@create')->name('blogs.create');
 Route::get('/blogs/{blog}/edit', 'BlogsController@edit')->name('blogs.edit');
@@ -29,3 +30,4 @@ Route::put('/blogs/{blog}', 'BlogsController@update')->name('blogs.update');
 Route::post('/blogs', 'BlogsController@store')->name('blogs.store');
 Route::delete('/blogs/{blog}', 'BlogsController@destroy')->name('blogs.destroy');
 Route::get('/blogs/{blog}', 'BlogsController@show')->name('blogs.show');
+//Route::post('comments', 'CommentsController');

@@ -5,7 +5,7 @@
     <h1> Blog Edit</h1>
     <form method="post" action="{{route ('blogs.update', [$blog->id])}}">
       {{csrf_field()}}
-      <div class="form-group">
+      <div>
         <input type="hidden" name="_method" value="put"/>
         <label for="blog-title">Title</label><br> 
         <input  placeholder="Enter Title"
@@ -14,7 +14,7 @@
                 value="{{$blog->title}}" 
                 required />
       </div>
-      <div class="form-group">
+      <div>
         <label for="blog-body">Body</label><br>
         <textarea rows="4"
                   cols="50"
@@ -23,13 +23,13 @@
                   name="body" 
                   required>{{$blog->body}}</textarea>
       </div>
-      <div class="form-group">
+      <div>
         <input type="submit" class="btn btn-primary" value="Submit"/>
       </div>
     </form>
   </div> <!-- form -->
-  <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-    <div class="sidebar-module">
+  <div class="col-sm-3 col-sm-offset-1">
+    <div>
       <h4>Actions</h4>
       <ol class="list-unstyled">
         <li><a href="/blogs">Return to Blogs Page</a></li>
